@@ -26,7 +26,6 @@ export default function useGetRecipes() {
     fetchRecipes()
   }, [])
 
-  console.log('THE HELL', resources);
   return {
     loading,
     resources,

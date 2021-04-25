@@ -8,8 +8,6 @@ export function HomePage() {
   const derp = useGetRecipes();
   const {loading, error} = derp
 
-  console.log('recipes', derp);
-
   return (
     <main className="home-page">
       <HomePageBanner />
