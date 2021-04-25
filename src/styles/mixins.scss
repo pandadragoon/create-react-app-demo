@@ -1,0 +1,51 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+@mixin media-query-above($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+@mixin media-query-below($device) {
+  @media screen and (max-width: $device - 1) {
+    @content;
+  }
+}
+
+@mixin media-query-between($lower, $upper) {
+  @media (min-width: $lower) and (max-width: $upper - 1) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @include media-query-below($phone) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @include media-query-above($tablet-portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @include media-query-above($tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @include media-query-above($desktop-md) {
+    @content;
+  }
+}

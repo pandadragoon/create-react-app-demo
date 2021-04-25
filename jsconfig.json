@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": {
+      "@constants": ["./common/constants/*"],
+      "@contexts": ["./common/contexts/*"],
+      "@core": ["./common/components/core/*"],
+      "@home": ["./features/home/*"],
+      "images": ["./common/images/*"],
+      "@hooks": ["./common/hooks/*"],
+      "@layout": ["./common/components/layout/*"],
+      "@recipe-details": ["./features/recipe-details/*"],
+      "@recipe-search": ["./features/recipe-search/*"],
+      "@root/*": ["./*"],
+      "@services": ["./common/services/*"],
+      "@utils": ["./common/utils/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "build"]
+}
